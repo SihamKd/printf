@@ -11,12 +11,14 @@ int _printf(const char *format, ...)
     char c;
     const char *s;
 
-    while (*format != '\0')
+    int i = 0; // Move the declaration to the beginning of the block
+
+    while (format[i] != '\0')
     {
-        if (*format == '%')
+        if (format[i] == '%')
         {
-            format++;
-            switch (*format)
+            i++;
+            switch (format[i])
             {
                 case 'c':
                     c = va_arg(args, int);
@@ -40,10 +42,10 @@ int _printf(const char *format, ...)
         }
         else
         {
-            putchar(*format);
+            putchar(format[i]);
             count++;
         }
-        format++;
+        i++;
     }
 
     va_end(args);
