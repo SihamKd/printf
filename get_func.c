@@ -14,6 +14,7 @@ spec arr[] = {
 {"%", print_percent},
 {"d", print_d},
 {"i", print_i},
+{"b",print_bnr},
 {NULL, NULL}
 };
 while (arr[i].valid)
